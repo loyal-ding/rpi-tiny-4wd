@@ -10,7 +10,7 @@ from PIL import Image
 from io import BytesIO
 
 
-from flask import Flask
+from flask import Flask, send_file
 
 # forward power should be 30 to 100
 # backward power should be 70 to 100
