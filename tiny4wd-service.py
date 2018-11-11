@@ -12,25 +12,25 @@ from flask import Flask
 # forward power should be 30 to 100
 # backward power should be 70 to 100
 # turnleft and turnright power should be 60 to 100
-# motor 2 forward to go forward
-# motor 1 backward to go forward
+# motor 2 backward to go forward
+# motor 1 forward to go forward
 
 
 def forward(power):
-  explorerhat.motor.two.forward(power)
+  explorerhat.motor.two.backward(power)
   explorerhat.motor.one.forward(power)
 
 def backward(power):
-  explorerhat.motor.two.backward(power)
-  explorerhat.motor.one.forward(power)
+  explorerhat.motor.two.forward(power)
+  explorerhat.motor.one.backward(power)
 
 def turnright(power):
-  explorerhat.motor.two.forward(power)
-  explorerhat.motor.one.forward(power)
-
-def turnleft(power):
   explorerhat.motor.two.backward(power)
   explorerhat.motor.one.backward(power)
+
+def turnleft(power):
+  explorerhat.motor.two.forward(power)
+  explorerhat.motor.one.forward(power)
 
   
 def stop():
@@ -91,6 +91,27 @@ def moveforward(movepower, movetime):
     stop()
     return "Forward Done"
 
+@app.route('/backward/<int:movepower>/<float:movetime>', methods=('GET', 'POST'))
+def movebackard(movepower, movetime):
+    backward(movepower)
+    sleep(movetime)
+    stop()
+    return "Backward Done"
+
+@app.route('/turnleft/<int:movepower>/<float:movetime>', methods=('GET', 'POST'))
+def moveturnleft(movepower, movetime):
+    turnleft(movepower)
+    sleep(movetime)
+    stop()
+    return "Turn Left Done"
+
+@app.route('/turnright/<int:movepower>/<float:movetime>', methods=('GET', 'POST'))
+def moveturnright(movepower, movetime):
+    turnright(movepower)
+    sleep(movetime)
+    stop()
+    return "Turn Right Done"
+	
 # move motor one forward
 @app.route('/oneforward/<int:movepower>/<float:movetime>', methods=('GET', 'POST'))
 def moveoneforward(movepower, movetime):
@@ -102,7 +123,7 @@ def moveoneforward(movepower, movetime):
 # move motor one forward
 @app.route('/twoforward/<int:movepower>/<float:movetime>', methods=('GET', 'POST'))
 def movetwoforward(movepower, movetime):
-    explorerhat.motor.two.forward(power)
+    explorerhat.motor.two.backward(power)
     sleep(movetime)
     stop()
     return "Two Forward Done"
