@@ -42,16 +42,20 @@ def stop():
 
 class RoverState():
 	def __init__(self):
-		self.img = None # Current camera image
-		self.frame = 0
+        self.img = None # Current camera image
+        self.frame = 0
 		# rock in front detection using Camera Warped image
-		self.rock_in_front = 0
-		self.rock_in_front_left = 0
-		self.rock_in_front_right = 0
+        self.rock_in_front = 0
+        self.rock_in_front_left = 0
+        self.rock_in_front_right = 0
 		# threshold of number of bright pixels to decide not rock. Sample calibration image has 1
-		self.rock_in_front_thresh = 15
-		self.turn_power = 75
-		self.threshold = 900
+        self.rock_in_front_thresh = 15
+        self.turn_power = 75
+        self.threshold = 900
+        # camera states
+        self.camera_x = 1024
+        self.camera_y = 768
+        self.camera_init = 1
 
 # power 60 - 100
 power = 70
@@ -61,6 +65,13 @@ threshold = 500
 Rover = RoverState()
 Rover.turn_power = power
 Rover.threshold = threshold
+
+camera = picamera.PiCamera()
+camera.resolution = (Rover.camera_x, Rover.camera_y)
+camera.vflip =  True
+camera.start_preview()
+# Camera warm-up time
+sleep(2)
 
 app = Flask(__name__)
 
@@ -72,11 +83,7 @@ def hello():
 # camera image
 @app.route('/getimage/<int:x>/<int:y>', methods=('GET', 'POST'))
 def getimage(x,y):
-    camera = picamera.PiCamera()
-    camera.resolution = (x, y)
-    camera.start_preview()
-    # Camera warm-up time
-    sleep(2)
+    global camera
     my_stream = BytesIO()
     timestamp = int(time.time())
     filename = str(timestamp) + '.jpg'
