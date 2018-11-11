@@ -63,20 +63,6 @@ Rover = RoverState()
 Rover.turn_power = power
 Rover.threshold = threshold
 
-xsize = 320
-ysize = 240
-
-image = np.empty((xsize, ysize, 3), dtype=np.uint8)
-camera.framerate = 30
-camera.hflip = True
-camera.vflip = True
-camera.awb_mode = 'incandescent'
-camera.brightness = 70
-rawCapture = picamera.array.PiRGBArray(camera, size=(xsize, ysize))
-
-# let the camera warm up
-sleep(2)
-
 app = Flask(__name__)
 
 
