@@ -81,7 +81,7 @@ def getimage(x,y):
     timestamp = int(time.time())
     filename = str(timestamp) + '.jpg'
     camera.capture(my_stream, 'jpeg')
-	response = make_response()
+    response = make_response()
     response.set_header('Content-type', 'image/jpeg')
     return my_stream.read()
 
