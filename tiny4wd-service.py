@@ -79,10 +79,11 @@ def getimage(x,y):
     # Camera warm-up time
     sleep(2)
     my_stream = BytesIO()
-    timestamp = time.localtime()
+    timestamp = int(time.time())
     filename = str(timestamp) + '.jpg'
     camera.capture(my_stream, 'jpeg')
-    return send_file(my_stream, mimetype='image/jpeg', as_attachment=True, attachment_filename= filename)
+    response.set_header('Content-type', 'image/jpeg')
+    return my_stream.read()
 
 # move
 @app.route('/forward/<int:movepower>/<float:movetime>', methods=('GET', 'POST'))
