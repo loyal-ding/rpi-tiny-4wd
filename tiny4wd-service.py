@@ -4,8 +4,11 @@ import picamera
 import picamera.array
 import numpy as np
 import explorerhat
+import time
 from time import sleep
 from PIL import Image
+from io import BytesIO
+
 
 from flask import Flask
 
@@ -64,8 +67,6 @@ xsize = 320
 ysize = 240
 
 image = np.empty((xsize, ysize, 3), dtype=np.uint8)
-camera = picamera.PiCamera()
-camera.resolution = (xsize, ysize)
 camera.framerate = 30
 camera.hflip = True
 camera.vflip = True
@@ -82,6 +83,20 @@ app = Flask(__name__)
 @app.route("/")
 def hello():
     return "Hello World!"
+
+# camera image
+@app.route('/getimage/<int:x>/<int:y>', methods=('GET', 'POST'))
+def getimage(x,y):
+    camera = picamera.PiCamera()
+    camera.resolution = (x, y)
+    camera.start_preview()
+    # Camera warm-up time
+    sleep(2)
+    my_stream = BytesIO()
+    timestamp = time.localtime()
+    filename = str(timestamp) + '.jpg'
+    camera.capture(my_stream, 'jpeg')
+    return send_file(my_stream, mimetype='image/jpeg', as_attachment=True, attachment_filename= filename)
 
 # move
 @app.route('/forward/<int:movepower>/<float:movetime>', methods=('GET', 'POST'))
