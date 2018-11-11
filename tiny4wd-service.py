@@ -89,4 +89,21 @@ def moveforward(movepower, movetime):
     forward(movepower)
     sleep(movetime)
     stop()
+    return "Forward Done"
+
+# move motor one forward
+@app.route('/oneforward/<int:movepower>/<float:movetime>', methods=('GET', 'POST'))
+def moveoneforward(movepower, movetime):
+    explorerhat.motor.one.forward(power)
+    sleep(movetime)
+    stop()
+    return "One Forward Done"
+
+# move motor one forward
+@app.route('/twoforward/<int:movepower>/<float:movetime>', methods=('GET', 'POST'))
+def movetwoforward(movepower, movetime):
+    explorerhat.motor.two.forward(power)
+    sleep(movetime)
+    stop()
+    return "Two Forward Done"
 
