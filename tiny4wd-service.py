@@ -9,7 +9,7 @@ from time import sleep
 from PIL import Image
 from io import BytesIO
 import flask
-from flask import Flask, send_file
+from flask import Flask, send_file, make_response
 
 # forward power should be 30 to 100
 # backward power should be 70 to 100
@@ -81,7 +81,8 @@ def getimage(x,y):
     timestamp = int(time.time())
     filename = str(timestamp) + '.jpg'
     camera.capture(my_stream, 'jpeg')
-    flask.response.set_header('Content-type', 'image/jpeg')
+	response = make_response()
+    response.set_header('Content-type', 'image/jpeg')
     return my_stream.read()
 
 # move
