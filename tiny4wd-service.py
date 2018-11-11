@@ -41,7 +41,7 @@ def stop():
 
 
 class RoverState():
-	def __init__(self):
+    def __init__(self):
         self.img = None # Current camera image
         self.frame = 0
 		# rock in front detection using Camera Warped image
