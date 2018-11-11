@@ -84,7 +84,7 @@ def hello():
     return "Hello World!"
 
 # move
-@app.route('/forward/<int:movepower>/<movetime>', methods=('GET', 'POST'))
+@app.route('/forward/<int:movepower>/<float:movetime>', methods=('GET', 'POST'))
 def moveforward(movepower, movetime):
     forward(movepower)
     sleep(movetime)
