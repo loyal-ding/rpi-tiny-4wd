@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import picamera
 import picamera.array
 import numpy as np
