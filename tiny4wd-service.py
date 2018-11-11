@@ -18,7 +18,7 @@ from flask import Flask
 
 def forward(power):
   explorerhat.motor.two.forward(power)
-  explorerhat.motor.one.backward(power)
+  explorerhat.motor.one.forward(power)
 
 def backward(power):
   explorerhat.motor.two.backward(power)
