@@ -93,6 +93,18 @@ def getimage(x,y):
     response.headers.set('Content-type', 'image/jpeg')
     return response
 
+@app.route('/getframe', methods=('GET', 'POST'))
+def getframe():
+    global camera
+    my_stream = BytesIO()
+    timestamp = int(time.time())
+    filename = str(timestamp) + '.jpg'
+    camera.capture(my_stream, 'jpeg')
+    my_stream.seek(0)
+    response = make_response(my_stream.read())
+    response.headers.set('Content-type', 'image/jpeg')
+    return response
+
 # move
 @app.route('/forward/<int:movepower>/<float:movetime>', methods=('GET', 'POST'))
 def moveforward(movepower, movetime):
