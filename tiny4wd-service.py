@@ -128,6 +128,14 @@ def setresolution(x,y):
     camera.resolution = (Rover.camera_x, Rover.camera_y)
     camera.start_preview()
     return response
+
+@app.route('/getcameraconfig', methods=('GET', 'POST'))
+def getcameraconfig():
+    global camera
+    global Rover
+    result = "X: " + str(Rover.camera_x) + "\n"
+    result = "Y: " + str(Rover.camera_y) + "\n"
+    return result
 	
 # move
 @app.route('/forward/<int:movepower>/<float:movetime>', methods=('GET', 'POST'))
