@@ -129,6 +129,19 @@ def setresolution(x,y):
     camera.start_preview()
     return response
 
+"""
+    PiCamera.AWB_MODES = 
+    'off'
+    'auto'
+    'sunlight'
+    'cloudy'
+    'shade'
+    'tungsten'
+    'fluorescent'
+    'incandescent'
+    'flash'
+    'horizon'
+"""
 @app.route('/getcameraconfig', methods=('GET', 'POST'))
 def getcameraconfig():
     global camera
@@ -140,6 +153,16 @@ def getcameraconfig():
     # Auto White Balance: (red, blue) balance in fraction 0.0 - 8.0 (typical 0.9 - 1.9)
     result = "AWB Gain: " + str(camera.awb_gain[0]) + " , " + str(camera.awb_gain[1]) + "\n"
     result = "AWB Mode: " + str(camera.awb_mode) + "\n"
+    # brightness 0 - 100 integer default 50
+    result = "Brightness: " + str(camera.brightness) + "\n"
+    # color_effects should be set to None
+    # brightness -100 to 100 integer default 0
+    result = "Contrast: " + str(camera.contrast) + "\n"
+
+    result = "Digital Gain: " + str(camera.digital_gain) + "\n"
+    # dynamic range compression strength    'off'    'low'    'medium'    'high'
+    result = "DRC Strength: " + camera.drc_strength + "\n"
+
     return result
 	
 # move
