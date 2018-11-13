@@ -135,6 +135,11 @@ def getcameraconfig():
     global Rover
     result = "X: " + str(Rover.camera_x) + "\n"
     result = "Y: " + str(Rover.camera_y) + "\n"
+    result = "ISO: " + str(camera.iso) + "\n"
+    result = "Analog Gain: " + str(camera.analog_gain) + "\n"
+    # Auto White Balance: (red, blue) balance in fraction 0.0 - 8.0 (typical 0.9 - 1.9)
+    result = "AWB Gain: " + str(camera.awb_gain[0]) + " , " + str(camera.awb_gain[1]) + "\n"
+    result = "AWB Mode: " + str(camera.awb_mode) + "\n"
     return result
 	
 # move
