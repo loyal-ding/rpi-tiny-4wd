@@ -117,6 +117,18 @@ def getframe():
     response.headers.set('Content-type', 'image/jpeg')
     return response
 
+@app.route('/setresolution/<int:x>/<int:y>', methods=('GET', 'POST'))
+def setresolution(x,y):
+    global camera
+    global Rover
+    camera.stop_preview()
+    sleep(2)
+    Rover.camera_x = x
+    Rover.camera_y = y	
+    camera.resolution = (Rover.camera_x, Rover.camera_y)
+    camera.start_preview()
+    return response
+	
 # move
 @app.route('/forward/<int:movepower>/<float:movetime>', methods=('GET', 'POST'))
 def moveforward(movepower, movetime):
