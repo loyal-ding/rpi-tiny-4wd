@@ -146,8 +146,8 @@ def setresolution(x,y):
 def getcameraconfig():
     global camera
     global Rover
-    result = "X: " + str(Rover.camera_x) + "\n"
-    result += "Y: " + str(Rover.camera_y) + "\n"
+    result = "X: " + str(Rover.camera_x) + " Camera Width: " + str(camera.resolution[0]) + "\n"
+    result += "Y: " + str(Rover.camera_y) + " Camera Height: " + str(camera.resolution[1]) + "\n"
     result += "ISO: " + str(camera.iso) + "\n"
     result += "Analog Gain: " + str(camera.analog_gain) + "\n"
     # Auto White Balance: (red, blue) balance in fraction 0.0 - 8.0 (typical 0.9 - 1.9)
@@ -181,6 +181,18 @@ def getcameraconfig():
     default "auto"
     '''
     result += "Exposure Mode: " + camera.exposure_mode + "\n"
+    # exposure_speed read only.  integer representing a number of microseconds.
+    # use when shutter_speed is set to 0 (auto)
+    result += "Exposure Speed: " + str(camera.exposure_speed) + "\n"
+    # saturation integer between -100 and 100. Default 0
+    result += "Saturation: " + str(camera.saturation) + "\n"
+    #  sharpness integer between -100 and 100. Default 0
+    result += "Sharpness: " + str(camera.sharpness) + "\n"
+    # shutter_speed. in microseconds. 0 = auto
+    result += "Shutter Speed: " + str(camera.shutter_speed) + "\n"
+    result += "Vflip: " + str(camera.vflip) + "\n"
+    result += "Hflip: " + str(camera.hflip) + "\n"
+
     return result
 	
 # move
