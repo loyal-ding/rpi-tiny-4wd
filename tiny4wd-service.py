@@ -147,22 +147,23 @@ def getcameraconfig():
     global camera
     global Rover
     result = "X: " + str(Rover.camera_x) + "\n"
-    result = "Y: " + str(Rover.camera_y) + "\n"
-    result = "ISO: " + str(camera.iso) + "\n"
-    result = "Analog Gain: " + str(camera.analog_gain) + "\n"
+    result += "Y: " + str(Rover.camera_y) + "\n"
+    result += "ISO: " + str(camera.iso) + "\n"
+    result += "Analog Gain: " + str(camera.analog_gain) + "\n"
     # Auto White Balance: (red, blue) balance in fraction 0.0 - 8.0 (typical 0.9 - 1.9)
-    result = "AWB Gain: " + str(camera.awb_gain[0]) + " , " + str(camera.awb_gain[1]) + "\n"
-    result = "AWB Mode: " + str(camera.awb_mode) + "\n"
+    result += "AWB Gain: " + str(camera.awb_gain[0]) + " , " + str(camera.awb_gain[1]) + "\n"
+    result += "AWB Mode: " + str(camera.awb_mode) + "\n"
     # brightness 0 - 100 integer default 50
-    result = "Brightness: " + str(camera.brightness) + "\n"
+    result += "Brightness: " + str(camera.brightness) + "\n"
     # color_effects should be set to None
     # brightness -100 to 100 integer default 0
-    result = "Contrast: " + str(camera.contrast) + "\n"
+    result += "Contrast: " + str(camera.contrast) + "\n"
 
-    result = "Digital Gain: " + str(camera.digital_gain) + "\n"
+    result += "Digital Gain: " + str(camera.digital_gain) + "\n"
     # dynamic range compression strength    'off'    'low'    'medium'    'high'
-    result = "DRC Strength: " + camera.drc_strength + "\n"
-
+    result += "DRC Strength: " + camera.drc_strength + "\n"
+    #  exposure_compensation integer value between -25 and 25 default 0
+    result += "Exposure Compensation: " + str(camera.exposure_compensation) + "\n"
     return result
 	
 # move
