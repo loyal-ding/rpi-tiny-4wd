@@ -164,6 +164,23 @@ def getcameraconfig():
     result += "DRC Strength: " + camera.drc_strength + "\n"
     #  exposure_compensation integer value between -25 and 25 default 0
     result += "Exposure Compensation: " + str(camera.exposure_compensation) + "\n"
+    ''' 
+    'off'
+    'auto'
+    'night'
+    'nightpreview'
+    'backlight'
+    'spotlight'
+    'sports'
+    'snow'
+    'beach'
+    'verylong'
+    'fixedfps'
+    'antishake'
+    'fireworks'
+    default "auto"
+    '''
+    result += "Exposure Mode: " + camera.exposure_mode + "\n"
     return result
 	
 # move
