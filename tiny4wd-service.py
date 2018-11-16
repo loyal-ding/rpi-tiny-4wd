@@ -192,7 +192,7 @@ def getcameraconfig():
     result += "Shutter Speed: " + str(camera.shutter_speed) + "\n"
 	# Vertical Flip T/F
     result += "Vflip: " + str(camera.vflip) + "\n"
-	# Horizontal Flip T/F
+	# Horizontal Flip True/False
     result += "Hflip: " + str(camera.hflip) + "\n"
     # video_denoise True/False
     result += "Video Denoise: " + str(camera.video_denoise) + "\n"
