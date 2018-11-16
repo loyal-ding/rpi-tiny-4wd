@@ -194,7 +194,7 @@ def getcameraconfig():
     result += "Vflip: " + str(camera.vflip) + "\n"
 	# Horizontal Flip T/F
     result += "Hflip: " + str(camera.hflip) + "\n"
-    # video_denoise T/F
+    # video_denoise True/False
     result += "Video Denoise: " + str(camera.video_denoise) + "\n"
     # video_stabilization True/False
     result += "Video Stabilization: " + str(camera.video_stabilization) + "\n"
