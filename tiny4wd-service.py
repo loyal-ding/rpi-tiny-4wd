@@ -190,7 +190,7 @@ def getcameraconfig():
     result += "Sharpness: " + str(camera.sharpness) + "\n"
     # shutter_speed. in microseconds. 0 = auto
     result += "Shutter Speed: " + str(camera.shutter_speed) + "\n"
-	# Vertical Flip True/False
+	# Vertical Flip True/False, default False
     result += "Vflip: " + str(camera.vflip) + "\n"
 	# Horizontal Flip True/False
     result += "Hflip: " + str(camera.hflip) + "\n"
