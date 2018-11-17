@@ -181,15 +181,15 @@ def getcameraconfig():
     default "auto"
     '''
     result += "Exposure Mode: " + camera.exposure_mode + "\n"
-    # exposure_speed read only.  integer representing a number of microseconds.
-    # use when shutter_speed is set to 0 (auto)
-    result += "Exposure Speed: " + str(camera.exposure_speed) + "\n"
     # saturation integer between -100 and 100. Default 0
     result += "Saturation: " + str(camera.saturation) + "\n"
     #  sharpness integer between -100 and 100. Default 0
     result += "Sharpness: " + str(camera.sharpness) + "\n"
     # shutter_speed. in microseconds. 0 = auto
     result += "Shutter Speed: " + str(camera.shutter_speed) + "\n"
+    # exposure_speed read only.  integer representing a number of microseconds.
+    # use when shutter_speed is set to 0 (auto)
+    result += "Exposure Speed: " + str(camera.exposure_speed) + "\n"
 	# Vertical Flip True/False, default False
     result += "Vflip: " + str(camera.vflip) + "\n"
 	# Horizontal Flip True/False, default False
