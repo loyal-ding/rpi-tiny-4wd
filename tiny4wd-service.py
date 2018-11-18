@@ -165,6 +165,7 @@ def getcameraconfig():
     #  exposure_compensation integer value between -25 and 25 default 0
     result += "Exposure Compensation: " + str(camera.exposure_compensation) + "\n"
     ''' 
+	Exposure Modes:
     'off'
     'auto'
     'night'
