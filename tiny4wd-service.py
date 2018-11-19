@@ -131,9 +131,7 @@ def setresolution(x,y):
 
 """
     PiCamera.AWB_MODES = 
-    'off'
-    'auto'
-    'sunlight'
+    'off'    'auto'    'sunlight'
     'cloudy'
     'shade'
     'tungsten'
