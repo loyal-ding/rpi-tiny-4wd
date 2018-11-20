@@ -241,3 +241,10 @@ def movetwoforward(movepower, movetime):
     stop()
     return "Two Forward Done"
 
+# move motor two backward
+@app.route('/twobackward/<int:movepower>/<float:movetime>', methods=('GET', 'POST'))
+def movetwoforward(movepower, movetime):
+    explorerhat.motor.two.backward(power)
+    sleep(movetime)
+    stop()
+    return "One Backward Done"
