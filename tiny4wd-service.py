@@ -58,7 +58,7 @@ class RoverState():
         self.camera_init = 1
 
 # power 60 - 100
-power = 80
+power = 75
 threshold = 600
 
 # Initialize our rover 
