@@ -59,7 +59,7 @@ class RoverState():
 
 # power 60 - 100
 power = 80
-threshold = 500
+threshold = 600
 
 # Initialize our rover 
 Rover = RoverState()
