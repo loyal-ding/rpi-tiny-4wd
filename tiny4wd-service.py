@@ -71,7 +71,7 @@ camera.resolution = (Rover.camera_x, Rover.camera_y)
 camera.vflip =  True
 camera.start_preview()
 # Camera warm-up time
-sleep(3)
+sleep(2)
 
 app = Flask(__name__)
 
