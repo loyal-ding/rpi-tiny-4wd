@@ -138,6 +138,7 @@ def setresolution(x,y):
 def getcameraconfig():
     global camera
     global Rover
+    # X value reported by camera
     result = "X: " + str(Rover.camera_x) + " Camera Width: " + str(camera.resolution[0]) + "\n"
     result += "Y: " + str(Rover.camera_y) + " Camera Height: " + str(camera.resolution[1]) + "\n"
     result += "ISO: " + str(camera.iso) + "\n"
