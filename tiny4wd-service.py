@@ -140,6 +140,7 @@ def getcameraconfig():
     global Rover
     # X value reported by camera
     result = "X: " + str(Rover.camera_x) + " Camera Width: " + str(camera.resolution[0]) + "\n"
+    # Y value reported by camera
     result += "Y: " + str(Rover.camera_y) + " Camera Height: " + str(camera.resolution[1]) + "\n"
     result += "ISO: " + str(camera.iso) + "\n"
     result += "Analog Gain: " + str(camera.analog_gain) + "\n"
