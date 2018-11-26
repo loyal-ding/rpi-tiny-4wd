@@ -142,6 +142,7 @@ def getcameraconfig():
     result = "X: " + str(Rover.camera_x) + " Camera Width: " + str(camera.resolution[0]) + "\n"
     # Y value reported by camera
     result += "Y: " + str(Rover.camera_y) + " Camera Height: " + str(camera.resolution[1]) + "\n"
+    # Camera ISO setting
     result += "ISO: " + str(camera.iso) + "\n"
     result += "Analog Gain: " + str(camera.analog_gain) + "\n"
     # Auto White Balance: (red, blue) balance in fraction 0.0 - 8.0 (typical 0.9 - 1.9)
