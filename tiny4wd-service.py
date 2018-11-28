@@ -165,7 +165,6 @@ def getcameraconfig():
 	Exposure Modes:
     'off'    'auto'    'night'    'nightpreview'    'backlight'    'spotlight'
     'sports'    'snow'    'beach'    'verylong'    'fixedfps'    'antishake'    'fireworks'
-	
     default "auto"
     '''
     result += "Exposure Mode: " + camera.exposure_mode + "\n"
