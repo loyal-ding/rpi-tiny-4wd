@@ -79,6 +79,7 @@ app = Flask(__name__)
 @app.after_request
 def add_header(r):
     """
+
     Add headers to both force latest IE rendering engine or Chrome Frame,
     and also disable cache.
 	
