@@ -167,6 +167,7 @@ def getcameraconfig():
     result += "Exposure Compensation: " + str(camera.exposure_compensation) + "\n"
     ''' 
 	Exposure Modes:
+	
     'off'    'auto'    'night'    'nightpreview'    'backlight'    'spotlight'
     'sports'    'snow'    'beach'    'verylong'    'fixedfps'    'antishake'    'fireworks'
     default "auto"
