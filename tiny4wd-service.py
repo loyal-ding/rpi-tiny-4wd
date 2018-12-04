@@ -171,8 +171,7 @@ def getcameraconfig():
     'off'    'auto'    'night'    'nightpreview'    'backlight'    'spotlight'
 	
     'sports'    'snow'    'beach'    'verylong'    'fixedfps'    'antishake'    'fireworks'
-	
-    default "auto"
+	default "auto"
     '''
     result += "Exposure Mode: " + camera.exposure_mode + "\n"
     # saturation integer between -100 and 100. Default 0
