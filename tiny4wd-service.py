@@ -199,6 +199,7 @@ def moveforward(movepower, movetime):
     stop()
     return "Forward Done"
 
+# move backward
 @app.route('/backward/<int:movepower>/<float:movetime>', methods=('GET', 'POST'))
 def movebackard(movepower, movetime):
     backward(movepower)
