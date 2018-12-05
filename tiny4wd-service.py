@@ -191,7 +191,7 @@ def getcameraconfig():
     result += "Video Stabilization: " + str(camera.video_stabilization) + "\n"
     return result
 	
-# move
+# move forward
 @app.route('/forward/<int:movepower>/<float:movetime>', methods=('GET', 'POST'))
 def moveforward(movepower, movetime):
     forward(movepower)
