@@ -131,8 +131,7 @@ def setresolution(x,y):
     camera.start_preview()
     return response
 
-"""
-    PiCamera.AWB_MODES = 	
+""" PiCamera.AWB_MODES = 	
 	'off'    'auto'    'sunlight'    'cloudy'    'shade'    'tungsten'
 	'fluorescent'    'incandescent'    'flash'    'horizon'
 """
