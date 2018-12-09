@@ -132,7 +132,8 @@ def setresolution(x,y):
     return response
 
 """
-    PiCamera.AWB_MODES = 	'off'    'auto'    'sunlight'    'cloudy'    'shade'    'tungsten'
+    PiCamera.AWB_MODES = 	
+	'off'    'auto'    'sunlight'    'cloudy'    'shade'    'tungsten'
 	'fluorescent'    'incandescent'    'flash'    'horizon'
 """
 @app.route('/getcameraconfig', methods=('GET', 'POST'))
