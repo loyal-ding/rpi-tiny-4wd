@@ -139,7 +139,6 @@ def setresolution(x,y):
 @app.route('/getcameraconfig', methods=('GET', 'POST'))
 def getcameraconfig():
     global camera
-	
     global Rover
 	
     # Photo Size X value reported by camera
