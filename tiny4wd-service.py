@@ -145,7 +145,8 @@ def getcameraconfig():
 	
     # Y value reported by camera
     result += "Y: " + str(Rover.camera_y) + " Camera Height: " + str(camera.resolution[1]) + "\n"
-    # Camera ISO setting
+    
+	# Camera ISO setting
     result += "ISO: " + str(camera.iso) + "\n"
     # Analog Gain default ?
     result += "Analog Gain: " + str(camera.analog_gain) + "\n"
