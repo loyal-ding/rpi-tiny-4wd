@@ -151,7 +151,8 @@ def getcameraconfig():
     
 	# Analog Gain default ?
     result += "Analog Gain: " + str(camera.analog_gain) + "\n"
-    # Auto White Balance: (red, blue) balance in fraction 0.0 - 8.0 (typical 0.9 - 1.9)
+    
+	# Auto White Balance: (red, blue) balance in fraction 0.0 - 8.0 (typical 0.9 - 1.9)
     result += "AWB Gain: " + str(camera.awb_gain[0]) + " , " + str(camera.awb_gain[1]) + "\n"
     # Auto White Balance Mode
     result += "AWB Mode: " + str(camera.awb_mode) + "\n"
