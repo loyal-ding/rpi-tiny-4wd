@@ -164,7 +164,8 @@ def getcameraconfig():
 	# color_effects should be set to None
     # brightness -100 to 100 integer default 0
     result += "Contrast: " + str(camera.contrast) + "\n"
-    # digital_gain default ?
+    
+	# digital_gain default ?
     result += "Digital Gain: " + str(camera.digital_gain) + "\n"
     # dynamic range compression strength    'off'    'low'    'medium'    'high'
     result += "DRC Strength: " + camera.drc_strength + "\n"
