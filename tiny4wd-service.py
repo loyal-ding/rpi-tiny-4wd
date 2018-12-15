@@ -160,7 +160,8 @@ def getcameraconfig():
     
 	# brightness 0 - 100 integer default 50
     result += "Brightness: " + str(camera.brightness) + "\n"
-    # color_effects should be set to None
+    
+	# color_effects should be set to None
     # brightness -100 to 100 integer default 0
     result += "Contrast: " + str(camera.contrast) + "\n"
     # digital_gain default ?
