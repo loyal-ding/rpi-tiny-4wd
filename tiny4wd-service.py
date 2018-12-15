@@ -170,7 +170,8 @@ def getcameraconfig():
     
 	# dynamic range compression strength    'off'    'low'    'medium'    'high'
     result += "DRC Strength: " + camera.drc_strength + "\n"
-    #  exposure_compensation integer value between -25 and 25 default 0
+    
+	#  exposure_compensation integer value between -25 and 25 default 0
     result += "Exposure Compensation: " + str(camera.exposure_compensation) + "\n"
     ''' 
 	Exposure Modes:
