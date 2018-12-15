@@ -167,7 +167,8 @@ def getcameraconfig():
     
 	# digital_gain default ?
     result += "Digital Gain: " + str(camera.digital_gain) + "\n"
-    # dynamic range compression strength    'off'    'low'    'medium'    'high'
+    
+	# dynamic range compression strength    'off'    'low'    'medium'    'high'
     result += "DRC Strength: " + camera.drc_strength + "\n"
     #  exposure_compensation integer value between -25 and 25 default 0
     result += "Exposure Compensation: " + str(camera.exposure_compensation) + "\n"
